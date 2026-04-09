@@ -27,7 +27,7 @@ namespace ConsoleApp2
                         }
                         Console.WriteLine("resp");
 
-                        Thread.Sleep(60000);
+                        Thread.Sleep(10000);
                     }
                     catch (HttpRequestException e)
                     {
