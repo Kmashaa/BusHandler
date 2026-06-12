@@ -7,7 +7,7 @@ namespace ConsoleApp2
     {
         static async Task Main(string[] args)
         {
-            var request = "https://smilebus.by/api/v2/route/schedule-detail?city_from_id=1&city_to_id=58&date=10.04.2026&stop_from_id=44&stop_to_id=248";
+            var request = "https://smilebus.by/api/v2/route/schedule-detail?city_from_id=1&city_to_id=58&date=12.06.2026&stop_from_id=44&stop_to_id=248";
             while (true)
             {
                 using (HttpClient client = new HttpClient())
@@ -17,7 +17,7 @@ namespace ConsoleApp2
                         // Отправка GET-запроса и получение ответа в виде строки
                         var responseBody = await client.GetFromJsonAsync<Response.Rootobject>(request);
                         var schedule = responseBody.schedule;
-                        var route = schedule.FirstOrDefault(o => o.time == "18:00");
+                        var route = schedule.FirstOrDefault(o => o.time == "17:10" || o.time == "18:00" || o.time == "19:00" || o.time == "21:10");
                         if (route.count > 0)
                         {
                             while (true)
