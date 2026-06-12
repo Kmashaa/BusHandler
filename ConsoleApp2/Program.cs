@@ -17,7 +17,7 @@ namespace ConsoleApp2
                         // Отправка GET-запроса и получение ответа в виде строки
                         var responseBody = await client.GetFromJsonAsync<Response.Rootobject>(request);
                         var schedule = responseBody.schedule;
-                        var route = schedule.FirstOrDefault(o => o.time == "17:10" || o.time == "18:00" || o.time == "19:00" || o.time == "21:10");
+                        var route = schedule.FirstOrDefault(o => o.time == "17:10" || o.time == "19:00");
                         if (route.count > 0)
                         {
                             while (true)
